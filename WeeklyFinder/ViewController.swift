@@ -8,27 +8,36 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var monthTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     
     @IBAction func findDayTapped() {
+        
+        guard let day = dayTextField.text,
+              let month = monthTextField.text,
+              let year = yearTextField.text else {
+            return
+        }
+        
         let calendar = Calendar.current
         var dateComponents = DateComponents()
-        dateComponents.day = Int(dayTextField.text!)
-        dateComponents.month = Int(monthTextField.text!)
-        dateComponents.year = Int(yearTextField.text!)
+        dateComponents.day = Int(day)
+        dateComponents.month = Int(month)
+        dateComponents.year = Int(year)
         
         let dateFormater = DateFormatter()
+        dateFormater.locale = Locale(identifier: "ru_Ru")
         dateFormater.dateFormat = "EEEE"
         
-        let date = calendar.date(from: dateComponents)
+        guard let date = calendar.date(from: dateComponents) else { return }
         
-        let weekDay = dateFormater.string(from: date!)
+        let weekday = dateFormater.string(from: date)
+        let capitalizedWeekday = weekday.capitalized
         
-        resultLabel.text = weekDay
+        resultLabel.text = capitalizedWeekday
     }
 }
 
