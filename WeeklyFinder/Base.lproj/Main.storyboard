@@ -1,24 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeeklyFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Finder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Feu-Ie-2Vv">
+                                <rect key="frame" x="75.5" y="30" width="169" height="51.5"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGl-se-KWe">
+                                <rect key="frame" x="110" y="332" width="100" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1rE-Xf-f60"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="lrp-Wo-fyA"/>
+                                </constraints>
+                                <state key="normal" title="Find day">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="findDayTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="XYD-sP-YIk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hear you will see the day of the week" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5t-rC-Jsv">
+                                <rect key="frame" x="35" y="261" width="250" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="j8z-WM-ZZL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZX7-Dj-QTf">
+                                <rect key="frame" x="86" y="105" width="214" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kNX-Eo-HPC">
+                                <rect key="frame" x="86" y="187" width="214" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ps-cB-asR">
+                                <rect key="frame" x="20" y="111.5" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mouth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8f5-mr-9A7">
+                                <rect key="frame" x="20" y="152.5" width="50" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="LWc-Kv-mrq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDG-ei-r5c">
+                                <rect key="frame" x="20" y="193.5" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LTJ-al-wH3">
+                                <rect key="frame" x="86" y="146" width="214" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kNX-Eo-HPC" firstAttribute="centerY" secondItem="TDG-ei-r5c" secondAttribute="centerY" id="049-56-oSX"/>
+                            <constraint firstItem="LTJ-al-wH3" firstAttribute="leading" secondItem="8f5-mr-9A7" secondAttribute="trailing" constant="16" id="0CO-Fq-X76"/>
+                            <constraint firstItem="LTJ-al-wH3" firstAttribute="leading" secondItem="ZX7-Dj-QTf" secondAttribute="leading" id="3ZG-wd-UPC"/>
+                            <constraint firstItem="kNX-Eo-HPC" firstAttribute="trailing" secondItem="LTJ-al-wH3" secondAttribute="trailing" id="3hg-rj-2o3"/>
+                            <constraint firstItem="TDG-ei-r5c" firstAttribute="top" secondItem="8f5-mr-9A7" secondAttribute="bottom" constant="20" id="62H-hv-sCw"/>
+                            <constraint firstItem="eGl-se-KWe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EHI-RY-U7d"/>
+                            <constraint firstItem="kNX-Eo-HPC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TDG-ei-r5c" secondAttribute="trailing" constant="8" symbolic="YES" id="FZj-Fh-zUb"/>
+                            <constraint firstItem="8f5-mr-9A7" firstAttribute="top" secondItem="0Ps-cB-asR" secondAttribute="bottom" constant="20" id="IOB-Fo-7me"/>
+                            <constraint firstItem="ZX7-Dj-QTf" firstAttribute="centerY" secondItem="0Ps-cB-asR" secondAttribute="centerY" id="KtF-i1-fEM"/>
+                            <constraint firstItem="LTJ-al-wH3" firstAttribute="centerY" secondItem="8f5-mr-9A7" secondAttribute="centerY" id="QRW-rE-A4p"/>
+                            <constraint firstItem="Feu-Ie-2Vv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UGB-3g-tJM"/>
+                            <constraint firstItem="LTJ-al-wH3" firstAttribute="trailing" secondItem="ZX7-Dj-QTf" secondAttribute="trailing" id="bRO-DM-YcX"/>
+                            <constraint firstItem="v5t-rC-Jsv" firstAttribute="top" secondItem="kNX-Eo-HPC" secondAttribute="bottom" constant="40" id="cce-Iq-zqq"/>
+                            <constraint firstItem="0Ps-cB-asR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ck9-Jq-sJ1"/>
+                            <constraint firstItem="v5t-rC-Jsv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fLj-hz-Pny"/>
+                            <constraint firstItem="TDG-ei-r5c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hJ8-Ih-Hxh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LTJ-al-wH3" secondAttribute="trailing" constant="20" id="iqY-KT-AlL"/>
+                            <constraint firstItem="kNX-Eo-HPC" firstAttribute="leading" secondItem="LTJ-al-wH3" secondAttribute="leading" id="k5P-0Y-ahF"/>
+                            <constraint firstItem="eGl-se-KWe" firstAttribute="top" secondItem="v5t-rC-Jsv" secondAttribute="bottom" constant="30" id="kXT-YV-ZMV"/>
+                            <constraint firstItem="ZX7-Dj-QTf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Ps-cB-asR" secondAttribute="trailing" constant="8" symbolic="YES" id="liC-D7-BZh"/>
+                            <constraint firstItem="8f5-mr-9A7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qQG-kK-VVQ"/>
+                            <constraint firstItem="0Ps-cB-asR" firstAttribute="top" secondItem="Feu-Ie-2Vv" secondAttribute="bottom" constant="30" id="qgg-EB-IFm"/>
+                            <constraint firstItem="Feu-Ie-2Vv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="y60-6x-hxh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dayTextField" destination="ZX7-Dj-QTf" id="LgT-fi-a9k"/>
+                        <outlet property="monthTextField" destination="LTJ-al-wH3" id="ZI6-H0-Imf"/>
+                        <outlet property="resultLabel" destination="v5t-rC-Jsv" id="gyq-F7-8us"/>
+                        <outlet property="yearTextField" destination="kNX-Eo-HPC" id="Udq-JR-8ko"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="95.625" y="78.75"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
