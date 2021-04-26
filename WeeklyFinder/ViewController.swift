@@ -15,7 +15,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     
     @IBAction func findDayTapped() {
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.day = Int(dayTextField.text!)
+        dateComponents.month = Int(monthTextField.text!)
+        dateComponents.year = Int(yearTextField.text!)
         
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "EEEE"
+        
+        let date = calendar.date(from: dateComponents)
+        
+        let weekDay = dateFormater.string(from: date!)
+        
+        resultLabel.text = weekDay
     }
 }
 
